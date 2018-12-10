@@ -2,8 +2,8 @@
   <form @submit.prevent="requestAdd">
     <input
       type="text"
-      id="newTodo"
-      placeholder="New To-do"
+      id="to-do-form"
+      placeholder="Add a new To-do"
       v-model="formData"
     />
   </form>
@@ -25,3 +25,11 @@ export default {
   }
 };
 </script>
+
+<style>
+#to-do-form{
+  margin: 10px;
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+</style>
