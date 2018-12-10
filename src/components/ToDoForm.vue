@@ -16,6 +16,12 @@ export default {
     return {
         formData: ''
     } 
+  },
+  methods:{
+    requestAdd: function(){
+      this.$emit('addTodo', this.formData)
+      this.formData = ''
+    }
   }
 };
 </script>
