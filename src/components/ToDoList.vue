@@ -6,7 +6,12 @@
       <li>
         <span class="to-do-item">
           <i class="fas fa-times-circle delete-button" @click="requestDelete(i)"></i>
-          {{todo}} 
+          <span 
+            contenteditable="true"
+            ref="todo"
+            @blur="requestUpdate('todo', i)">
+            {{todo}} 
+          </span>
         </span>
       </li>
     </ul>
@@ -20,6 +25,9 @@ export default {
   methods: {
     requestDelete: function(index){
       this.$emit('deleteTodo', index)
+    },
+    requestUpdate: function(todoRef, i){
+      this.todoList[i] = this.$refs[todoRef][i].innerText
     }
   }
 };
